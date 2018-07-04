@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="js/additional-methods.min.js"></script>
+		<script type="text/javascript" src="js/localization/messages_pt_BR.js"></script>
+		
+		<script type="text/javascript">
+		
+	
+		
+			$(document).ready(function(){
+				$("#formCadastro").validate({
+					rules:{
+						nome: {
+							required: true,
+							maxlength: 100,
+							minlength: 10,
+							minWords: 2
+						}
+          }	
+				})
+			})
+		</script>
+    
+
+    <title>Form</title>
+</head>
+
+<body>
+
+
+
+    <div class="row">
+        <div class="col-sm-4"></div>
+
+        <div class="col-sm-4">
+            <h1>Form</h1>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-sm-4"></div>
+
+        <div class="col-sm-4">
+
+            <form name="formCadastro" id="formCadastro" >
+
+                <div class="form-group">
+                    <label for="cpf">CPF</label>
+                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Informe algo"/>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="nome"/>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="data">Data</label>
+                        <input type="text" class="form-control" id="data" name="data" placeholder="data"/>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-8">
+                        <label for="email">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="qwer@gmail.com"/>                       
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="tel">Telefone</label>
+                        <input type="tel" class="form-control" id="tel" name="tel" placeholder="Telefone"/>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="col-sm-4"></div>
+
+
+    
+
+
+
+    
+</body>
+</html>
