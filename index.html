@@ -18,17 +18,18 @@
 
     <title>Form</title>
 </head>
+
 <body>
 
     <div class="container">
 
-        <div class="row" style="margin-bottom: 70px;" >
+        <div class="row" style="margin-bottom: 70px;">
             <div class="col-sm-4">
-                <img src="img/hja.png" class="rounded float-left" alt="Responsive image">
+                
             </div>
 
             <div class="col-sm-4">
-                <h1>Formulário</h1>
+                <img src="img/hja.png" class="rounded float-left" alt="Responsive image">
             </div>
             <div class="col-sm-4"></div>
         </div>
@@ -40,39 +41,51 @@
 
             <div class="col-sm-6">
 
-                <form name="formCadastro" id="formCadastro">
-
-                    <div class="form-group">
-                        <label for="cpf">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Ex.: 000.000.000-00">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        HJA Formulário
                     </div>
+                    <div class="card-body">
 
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="nome">Nome</label>
-                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Ex.: Jão Silva">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="data">Data</label>
-                            <input type="date" class="form-control" id="data" name="data" required min="1998-01-01" max="2022-02-18" title="Por favor, forneça a data Entre 01/01/1998 a 18/02/2022.">
-                        </div>
-                    </div>
+                        <form name="formCadastro" id="formCadastro">
 
-                    <div class="form-row">
-                        <div class="form-group col-md-7">
-                            <label for="email">E-mail</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@gmail.com">
-                        </div>
-                        <div class="form-group col-md-5">
-                            <label for="tel">Celular</label>
-                            <input type="tel" class="form-control" id="tel" name="tel" placeholder="Ex.: (00) 0000-0000">
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-outline-primary">Enviar</button>
-                    </div>
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Ex.: Nome Sobrenome">
+                            </div>
 
-                </form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="cpf">CPF</label>
+                                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Ex.: 000.000.000-00">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="data">Data</label>
+                                    <input type="date" class="form-control" id="data" name="data" required min="1893-01-01" max="2022-31-12" title="Por favor, forneça a data Entre 01/01/1893 a 31/12/2022.">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-7">
+                                    <label for="email">E-mail</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@gmail.com">
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="tel">Celular</label>
+                                    <input type="tel" class="form-control" id="tel" name="tel" placeholder="Ex.: (00) 0000-0000">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-outline-primary">Enviar</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <!-- fim .card-body -->
+                </div>
+                <!-- fim .card -->
 
             </div>
 
@@ -82,4 +95,5 @@
 
     </div>
 </body>
+
 </html>

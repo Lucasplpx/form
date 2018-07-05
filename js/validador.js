@@ -55,7 +55,7 @@ $(document).ready(function () {
             nome: {
                 required: true,
                 maxlength: 20,
-                minlength: 5,
+                //minlength: 5,
                 minWords: 2
             },
             email: {
