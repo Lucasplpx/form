@@ -5,3 +5,19 @@ h1 {
 .error {
     color: red;
 }
+
+.container {
+        
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+span{
+    font-family: 'Boogaloo', cursive;
+    font-size: 25px;
+}
+
+label{
+    font-family: 'Special Elite', cursive;
+    font-weight: bold;
+}
