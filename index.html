@@ -3,28 +3,29 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/additional-methods.min.js"></script>
     <script type="text/javascript" src="js/localization/messages_pt_BR.js"></script>
     <script type="text/javascript" src="js/jquery.mask.min.js"></script>
     <script type="text/javascript" src="js/validador.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet"/>
 
     <title>Form</title>
-</head>
 
+</head>
 <body>
 
     <div class="container">
 
-        <div class="row" style="margin-bottom: 70px;">
+        <div class="row" style="margin-bottom: 40px;">
             <div class="col-sm-4">
 
             </div>
@@ -42,15 +43,18 @@
 
             <div class="col-sm-6">
 
-                <div class="card border-info mb-3">
-                    <div class="card-header bg-transparent border-info">
+                <div class="card border-dark mb-3">
+                    <div class="card-header bg-transparent border-dark">
                         <center>
                             <span>Preencha as informações</span>
                         </center>
                     </div>
                     <div class="card-body">
 
-                        <form name="formCadastro" id="formCadastro">
+                        <form name="formCadastro" id="formCadastro" onsubmit="return confirmacao()">
+
+
+                          
 
                             <div class="form-group">
                                 <label for="nome">Nome</label>
@@ -87,7 +91,7 @@
 
                     </div>
                     <!-- fim .card-body -->
-                    <div class="card-footer border-info">
+                    <div class="card-footer border-dark">
                         <center>
                             <small class="text-muted">&copy; 2018</small>
                         </center>
@@ -98,10 +102,10 @@
             </div>
 
             <div class="col-sm-3"></div>
-
+            <div class="alert alert-danger" role="alert">
+                Erro de validação
+            </div>
         </div>
-
     </div>
 </body>
-
 </html>

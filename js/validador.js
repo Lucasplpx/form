@@ -1,3 +1,5 @@
+
+//Valida CPF
 jQuery.validator.addMethod("cpf", function (value, element) {
     value = jQuery.trim(value);
 
@@ -23,10 +25,9 @@ jQuery.validator.addMethod("cpf", function (value, element) {
 }, "Informe um CPF válido."); // Mensagem padrão
 
 
-
-//Celular
+//Valida Celular
 jQuery.validator.addMethod('celular', function (value, element) {
-    value = value.replace("(","");
+    value = value.replace("(", "");
     value = value.replace(")", "");
     value = value.replace("-", "");
     value = value.replace(" ", "").trim();
@@ -34,7 +35,7 @@ jQuery.validator.addMethod('celular', function (value, element) {
         return (this.optional(element) || false);
     } else if (value == '00000000000') {
         return (this.optional(element) || false);
-    } 
+    }
     if (["00", "01", "02", "03", , "04", , "05", , "06", , "07", , "08", "09", "10"].indexOf(value.substring(0, 2)) != -1) {
         return (this.optional(element) || false);
     }
@@ -45,10 +46,24 @@ jQuery.validator.addMethod('celular', function (value, element) {
         return (this.optional(element) || false);
     }
     return (this.optional(element) || true);
-}, 'Informe um celular válido'); 
+}, 'Informe um celular válido');
 
+//Aplicação de Mascaras
+$(document).ready(function () {
+    $("#cpf").mask("000.000.000-00")
+    // $("#tel").mask("(00) 0000-0000")
 
+    $('#tel').mask('(00) 0000-00009');
+    $('#tel').blur(function (event) {
+        if ($(this).val().length == 15) { // Celular com 9 dígitos + 2 dígitos DDD e 4 da máscara
+            $('#tel').mask('(00) 00000-0009');
+        } else {
+            $('#tel').mask('(00) 0000-00009');
+        }
+    });
+});
 
+//Validação do Formulário enviado.
 $(document).ready(function () {
     $("#formCadastro").validate({
         rules: {
@@ -70,24 +85,41 @@ $(document).ready(function () {
                 celular: true,
                 required: true
             }
-        },
+        }, //Limpar Campos
         submitHandler: function (form) {
-            alert('Sucesso');
+            document.getElementById('nome').value = '';
+            document.getElementById('cpf').value = '';
+            document.getElementById('data').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('tel').value = '';
+            //alert('Cadastrado com sucesso!');
+
+            //Mensagem de sucesso
+    
+            $.notify({
+                message: 'Cadastrado com sucesso!'
+            },{
+                type: 'success',
+            },{
+                animate: {
+                    enter: 'animated fadeInDown',
+                    exit: 'animated fadeOutUp'
+                }
+
+            });
+        
         }
     })
-});
 
-
-$(document).ready(function () {
-    $("#cpf").mask("000.000.000-00")
-   // $("#tel").mask("(00) 0000-0000")
-
-    $('#tel').mask('(00) 0000-00009');
-    $('#tel').blur(function(event) {
-   if($(this).val().length == 15){ // Celular com 9 dígitos + 2 dígitos DDD e 4 da máscara
-      $('#tel').mask('(00) 00000-0009');
-   } else {
-      $('#tel').mask('(00) 0000-00009');
-   }
 });
-});
+/*
+function confirmacao () {
+    $.notify({
+        message: 'Cadastro salvo com sucesso'
+    },{
+        type: 'success'
+    });
+
+    return false;
+}
+*/
