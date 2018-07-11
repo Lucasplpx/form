@@ -13,8 +13,9 @@ h1 {
 }
 
 span{
-    font-family: 'Boogaloo', cursive;
-    font-size: 25px;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 label{

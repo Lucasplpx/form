@@ -51,10 +51,7 @@
                     </div>
                     <div class="card-body">
 
-                        <form name="formCadastro" id="formCadastro" onsubmit="return confirmacao()">
-
-
-                          
+                        <form name="formCadastro" id="formCadastro" onsubmit="confirmacao()">                          
 
                             <div class="form-group">
                                 <label for="nome">Nome</label>
@@ -69,7 +66,8 @@
 
                                 <div class="form-group col-md-6">
                                     <label for="data">Data</label>
-                                    <input type="date" class="form-control" id="data" name="data" required min="1893-01-01" max="2022-31-12" title="Por favor, forneça a data Entre 01/01/1893 a 31/12/2022.">
+                                    <input type="date" class="form-control" id="data" name="data" required min="1893-01-01" max="2022-31-12" title="Data inválida.">
+                                    <!-- Por favor, forneça a data Entre 01/01/1893 a 31/12/2022. -->
                                 </div>
                             </div>
 
@@ -102,9 +100,7 @@
             </div>
 
             <div class="col-sm-3"></div>
-            <div class="alert alert-danger" role="alert">
-                Erro de validação
-            </div>
+            
         </div>
     </div>
 </body>

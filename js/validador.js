@@ -66,12 +66,13 @@ $(document).ready(function () {
 //Validação do Formulário enviado.
 $(document).ready(function () {
     $("#formCadastro").validate({
+
         rules: {
             nome: {
                 required: true,
                 maxlength: 20,
                 //minlength: 5,
-                minWords: 2
+                minWords: 2,
             },
             email: {
                 required: true,
@@ -84,7 +85,9 @@ $(document).ready(function () {
             tel: {
                 celular: true,
                 required: true
-            }
+                
+            },
+
         }, //Limpar Campos
         submitHandler: function (form) {
             document.getElementById('nome').value = '';
@@ -97,29 +100,38 @@ $(document).ready(function () {
             //Mensagem de sucesso
     
             $.notify({
-                message: 'Cadastrado com sucesso!'
+                // options
+                message: 'Cadastrado com sucesso!' 
             },{
-                type: 'success',
-            },{
-                animate: {
-                    enter: 'animated fadeInDown',
-                    exit: 'animated fadeOutUp'
-                }
-
+                // settings
+                type: "success",    
+                placement: {
+                    from: "top",
+                    align: "center"
+                },        
             });
         
         }
     })
 
 });
-/*
-function confirmacao () {
-    $.notify({
-        message: 'Cadastro salvo com sucesso'
-    },{
-        type: 'success'
-    });
 
-    return false;
+function confirmacao() {
+    
+    if( (document.getElementById('nome').value == '') || (document.getElementById('email').value == '') ){
+        
+        $.notify({
+            // options
+            message: 'Erro de validação!' 
+        },{
+            // settings
+            type: "danger",    
+            placement: {
+                from: "top",
+                align: "center"
+            },        
+        });
+        
+    }
+
 }
-*/
